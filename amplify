@@ -1,0 +1,66 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-vendorportal-dev-105519-authRole",
+      "UnauthRoleArn": "arn:aws:iam::677641026485:role/amplify-vendorportal-dev-105519-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::677641026485:role/amplify-vendorportal-dev-105519-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-vendorportal-dev-105519-deployment",
+      "UnauthRoleName": "amplify-vendorportal-dev-105519-unauthRole",
+      "StackName": "amplify-vendorportal-dev-105519",
+      "StackId": "arn:aws:cloudformation:us-east-1:677641026485:stack/amplify-vendorportal-dev-105519/f4e2e6a0-1ffa-11ee-9917-12d71a0c50d7",
+      "AmplifyAppId": "d3bwm3ai414kjr",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-vendorportal-dev-105519-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
+    },
+    "categories": {
+      "function": {
+        "vendorportalfunction": {
+          "deploymentBucketName": "amplify-vendorportal-dev-105519-deployment",
+          "s3Key": "amplify-builds/vendorportalfunction-77686f58753267485374-build.zip"
+        },
+        "orderupdater": {
+          "deploymentBucketName": "amplify-vendorportal-dev-105519-deployment",
+          "s3Key": "amplify-builds/orderupdater-704a2f7978726c636336-build.zip"
+        }
+      },
+      "auth": {
+        "vendorportal": {}
+      },
+      "api": {
+        "vendorportal": {}
+      }
+    }
+  },
+  "test": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-vendorportal-test-225611-authRole",
+      "UnauthRoleArn": "arn:aws:iam::677641026485:role/amplify-vendorportal-test-225611-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::677641026485:role/amplify-vendorportal-test-225611-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-vendorportal-test-225611-deployment",
+      "UnauthRoleName": "amplify-vendorportal-test-225611-unauthRole",
+      "StackName": "amplify-vendorportal-test-225611",
+      "StackId": "arn:aws:cloudformation:us-east-1:677641026485:stack/amplify-vendorportal-test-225611/79e2b920-2dbb-11ee-bd9e-0a3eb3a18d69",
+      "AmplifyAppId": "drl5rvrwb9t5n"
+    },
+    "categories": {
+      "auth": {
+        "vendorportal": {}
+      },
+      "function": {
+        "orderupdater": {
+          "deploymentBucketName": "amplify-vendorportal-test-225611-deployment",
+          "s3Key": "amplify-builds/orderupdater-4f39496f6a366f336d32-build.zip"
+        },
+        "vendorportalfunction": {},
+        "vendorfunction": {
+          "deploymentBucketName": "amplify-vendorportal-test-225611-deployment",
+          "s3Key": "amplify-builds/vendorfunction-5950375265515053792b-build.zip"
+        }
+      },
+      "api": {
+        "vendorapi": {}
+      }
+    }
+  }
+}

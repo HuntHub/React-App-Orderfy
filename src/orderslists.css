@@ -1,0 +1,19 @@
+.order {
+    margin-bottom: 20px; /* Adjust this value as needed */
+}
+
+.order-list-header {
+    margin-bottom: 20px; /* Adjust as needed */
+}
+
+.order-id {
+    margin-bottom: 5px; /* Adjust as needed */
+}
+
+.status {
+    margin-bottom: 10px; /* Adjust as needed */
+}
+
+.ready-button {
+    margin-bottom: 20px; /* Adjust as needed */
+}
