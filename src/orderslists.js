@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { API } from 'aws-amplify';
 import './orderslists.css';
 
-const OrdersLists = () => {
+const OrdersLists = ({ updatedOrder }) => {  // <-- Destructure the new prop
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {
@@ -13,6 +13,22 @@ const OrdersLists = () => {
             })
             .catch(err => console.error(err));
     }, []);
+
+    useEffect(() => {
+        // If there's an updated order, modify its status in the orders array
+        if (updatedOrder) {
+            const newOrders = orders.map(order => {
+                if (order.order_id === updatedOrder) {
+                    return {
+                        ...order,
+                        order_status: "Ready"  // Or any other status based on your backend's logic
+                    };
+                }
+                return order;
+            });
+            setOrders(newOrders);
+        }
+    }, [updatedOrder]);
 
     const handleOrderUpdate = (order_id) => {
         const body = {
