@@ -24,6 +24,10 @@ function App() {
                 if (data.message === "Order updated") {
                     setUpdatedOrder(data.order_id);
                 }
+                if (data.message === "New order") {
+                  setUpdatedOrder(data.order_id);
+                  console.log("New order received.", data.order_id);
+              }
             });
 
             socket.addEventListener('close', (event) => {

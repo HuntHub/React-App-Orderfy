@@ -15,8 +15,8 @@ const OrdersLists = ({ updatedOrder }) => {  // <-- Destructure the new prop
     }, []);
 
     useEffect(() => {
-        // If there's an updated order, modify its status in the orders array
-        if (updatedOrder) {
+        // If there's an updated order, and it exists in the orders array
+        if (updatedOrder && orders.some(order => order.order_id === updatedOrder)) {
             const newOrders = orders.map(order => {
                 if (order.order_id === updatedOrder) {
                     return {
@@ -28,8 +28,22 @@ const OrdersLists = ({ updatedOrder }) => {  // <-- Destructure the new prop
             });
             setOrders(newOrders);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [updatedOrder]);
 
+    useEffect(() => {
+        // Logic to add a new order to the orders array
+        // For example, you can add a new order when a "New order" event is received
+        if (updatedOrder && !orders.some(order => order.order_id === updatedOrder)) {
+            // Create a new order object and add it to the orders array
+            const newOrder = {
+                order_id: updatedOrder,
+                order_status: "Order Received" // You can set any initial status for new orders
+            };
+            setOrders(prevOrders => [...prevOrders, newOrder]);
+            console.log("New order added to orders array:", newOrder);
+        }
+    }, [updatedOrder, orders]);
     const handleOrderUpdate = (order_id) => {
         const body = {
             order_id,
