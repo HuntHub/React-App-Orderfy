@@ -6,17 +6,22 @@ const OrdersLists = ({ updatedOrder }) => {  // <-- Destructure the new prop
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {
+        console.log("Fetching orders from the API...");
         API.get('vendorapi', '/orders')
             .then(data => {
                 console.log(data);  // Log the data to the console
                 setOrders(data);
             })
-            .catch(err => console.error(err));
+            .catch(err => console.error("API Error:", err));
     }, []);
 
     useEffect(() => {
         // If there's an updated order, and it exists in the orders array
         if (updatedOrder && orders.some(order => order.order_id === updatedOrder)) {
+            const newOrder = {
+                order_id: updatedOrder,
+                order_status: "Order Received" // You can set any initial status for new orders
+            };
             const newOrders = orders.map(order => {
                 if (order.order_id === updatedOrder) {
                     return {
@@ -27,6 +32,7 @@ const OrdersLists = ({ updatedOrder }) => {  // <-- Destructure the new prop
                 return order;
             });
             setOrders(newOrders);
+            console.log("Update made to an order in the array:", newOrder);
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [updatedOrder]);
@@ -44,7 +50,9 @@ const OrdersLists = ({ updatedOrder }) => {  // <-- Destructure the new prop
             console.log("New order added to orders array:", newOrder);
         }
     }, [updatedOrder, orders]);
+
     const handleOrderUpdate = (order_id) => {
+        console.log("Mark as Ready button clicked for order ID:", order_id);
         const body = {
             order_id,
             new_status: "Ready"
@@ -53,11 +61,13 @@ const OrdersLists = ({ updatedOrder }) => {  // <-- Destructure the new prop
         API.post('vendorapi', '/updateorder', {
             body
         }).then(response => {
-            console.log(response);
+            console.log("API Response:", response);
         }).catch(error => {
-            console.error(error.response);
+            console.error("API Error:", error.response);
         });
     };
+
+    console.log("Rendering OrdersLists component...");
 
     return (
         <div>

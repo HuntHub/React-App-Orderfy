@@ -21,8 +21,10 @@ function App() {
 
             socket.addEventListener('message', (event) => {
                 const data = JSON.parse(event.data);
+                console.log('WebSocket message received:', data);
                 if (data.message === "Order updated") {
                     setUpdatedOrder(data.order_id);
+                    console.log("Order updated.", data.order_id);
                 }
                 if (data.message === "New order") {
                   setUpdatedOrder(data.order_id);
