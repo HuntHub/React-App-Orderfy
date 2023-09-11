@@ -6,7 +6,8 @@ import './navigation.css';
 import { withAuthenticator } from '@aws-amplify/ui-react';
 
 function App() {
-    const [updatedOrder, setUpdatedOrder] = useState(null);  // <-- Add this state
+    const [newOrder, setNewOrder] = useState(null);  // State for new orders
+    const [updatedOrder, setUpdatedOrder] = useState(null);  // State for updated orders
 
     useEffect(() => {
         let socket;
@@ -22,14 +23,20 @@ function App() {
             socket.addEventListener('message', (event) => {
                 const data = JSON.parse(event.data);
                 console.log('WebSocket message received:', data);
-                if (data.message === "Order updated") {
+
+                if (data.message === "Order updated" && data.order_id !== updatedOrder) {
                     setUpdatedOrder(data.order_id);
-                    console.log("Order updated.", data.order_id);
+                    console.log(data.message, data.order_id);
+                    
+                    // Resetting the updatedOrder state after a short delay
+                    setTimeout(() => setUpdatedOrder(null), 1000);
+                } else if (data.message === "New order" && data.order_id !== newOrder) {
+                    setNewOrder(data.order_id);
+                    console.log(data.message, data.order_id);
+                    
+                    // Resetting the newOrder state after a short delay
+                    setTimeout(() => setNewOrder(null), 1000);
                 }
-                if (data.message === "New order") {
-                  setUpdatedOrder(data.order_id);
-                  console.log("New order received.", data.order_id);
-              }
             });
 
             socket.addEventListener('close', (event) => {
@@ -54,7 +61,8 @@ function App() {
                 socket.close();
             }
         };
-    }, []);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);  // Added dependencies to the useEffect
 
     return (
         <div className="App">
@@ -63,7 +71,7 @@ function App() {
                 <div className="app-title">
                     <h1>Order Interface</h1>
                 </div>
-                <OrdersLists updatedOrder={updatedOrder} />
+                <OrdersLists newOrder={newOrder} updatedOrder={updatedOrder} />
             </header>
         </div>
     );
