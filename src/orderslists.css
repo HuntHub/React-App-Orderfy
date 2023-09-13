@@ -43,6 +43,7 @@
     .order {
     box-sizing: border-box;
     padding: 5px;
+    flex-direction: column;
     }
 }
 
@@ -50,7 +51,7 @@
     .order-id {
     margin-bottom: 5px; 
     white-space: nowrap;
-    text-align: left;
+    text-align: center;
     }
 }
 
