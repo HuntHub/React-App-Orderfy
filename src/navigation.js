@@ -39,11 +39,6 @@ const Navigation = () => {
     <Navbar expand="lg" className="navigation">
       <Navbar.Brand className="app-name" href="#">Orderfy</Navbar.Brand>
       <Navbar.Brand className="interface-title" href="#">Hello, {username}</Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
-        </Nav>
-      </Navbar.Collapse>
       <Button variant="outline-danger" className="logout-button" onClick={handleLogout}>Logout</Button>
     </Navbar>
   );

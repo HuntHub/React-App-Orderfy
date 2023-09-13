@@ -51,7 +51,7 @@
   @media (max-width: 1000px) {
     .app-name {
     color: #316fff;
-    font-size: 10px;
+    font-size: 25px;
     font-weight: 600;
     }
   }
@@ -61,7 +61,7 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 12.5px;
+    font-size: 20px;
     color: #316fff;
     font-weight: 600;
    }
@@ -70,6 +70,6 @@
   @media (max-width: 1000px) {
     .logout-button {
     order: 3;
-    margin-right: 10px;
+    margin-right: 5px;
     }
   }
