@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Navbar, Nav, Button } from 'react-bootstrap';
+import { Navbar, Button } from 'react-bootstrap';
 import { Auth } from 'aws-amplify';
 
 const Navigation = () => {
