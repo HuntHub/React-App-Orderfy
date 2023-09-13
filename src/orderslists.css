@@ -24,3 +24,40 @@
     margin: 0 auto;
     margin-bottom: 20px; 
 }
+
+@media (max-width: 768px) {
+    .order-list-header {
+    margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .order-list-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .order {
+    box-sizing: border-box;
+    padding: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .order-id {
+    margin-bottom: 5px; 
+    white-space: nowrap;
+    text-align: left;
+    }
+}
+
+@media (max-width: 768px) {
+    .ready-button {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px; 
+    }
+}
