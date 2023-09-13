@@ -42,13 +42,13 @@
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .App {
     text-align: center;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -61,7 +61,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .App-header {
   background-color: #252a36;
   min-height: 100vh;
@@ -74,7 +74,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .App-link {
   color: #61dafb;
   }
@@ -89,7 +89,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .app-title {
   margin-top: 125px;
   }
