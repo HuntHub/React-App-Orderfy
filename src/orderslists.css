@@ -29,33 +29,24 @@
     .order-list-header {
     margin-bottom: 20px;
     }
-}
 
-@media (max-width: 1000px) {
     .order-list-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 5px;
     }
-}
 
-@media (max-width: 1000px) {
     .order {
-    box-sizing: border-box;
     padding: 5px;
     flex-direction: column;
     }
-}
 
-@media (max-width: 1000px) {
     .order-id {
     margin-bottom: 5px; 
     white-space: nowrap;
     text-align: center;
     }
-}
 
-@media (max-width: 1000px) {
     .ready-button {
     display: block;
     margin: 0 auto;

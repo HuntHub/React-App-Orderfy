@@ -45,18 +45,14 @@
     margin-top: 20px;
     background-color: rgb(173, 200, 255);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    }
-  }  
+    }  
 
-  @media (max-width: 1000px) {
     .app-name {
     color: #316fff;
     font-size: 25px;
     font-weight: 600;
     }
-  }
 
-  @media (max-width: 1000px) {
     .interface-title {
     position: absolute;
     left: 50%;
@@ -65,9 +61,7 @@
     color: #3b5aa2;
     font-weight: 600;
    }
-  }
 
-  @media (max-width: 1000px) {
     .logout-button {
     order: 3;
     margin-right: 5px;
