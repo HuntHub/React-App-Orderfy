@@ -1,19 +1,26 @@
-.order {
-    margin-bottom: 20px; /* Adjust this value as needed */
+.order-list-header {
+    margin-bottom: 20px;
 }
 
-.order-list-header {
-    margin-bottom: 20px; /* Adjust as needed */
+.order-list-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.order {
+    box-sizing: border-box;
+    padding: 5px;
 }
 
 .order-id {
-    margin-bottom: 5px; /* Adjust as needed */
-}
-
-.status {
-    margin-bottom: 10px; /* Adjust as needed */
+    margin-bottom: 5px; 
+    white-space: nowrap;
+    text-align: left;
 }
 
 .ready-button {
-    margin-bottom: 20px; /* Adjust as needed */
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px; 
 }
