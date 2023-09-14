@@ -40,9 +40,6 @@
     display: block;
     margin: 0 auto;
     margin-bottom: 20px;
-    border-radius: 50px;
-    color:#2a6aff;
-    background-color: #385496;
 }
 
 @media (max-width: 1000px) {
@@ -92,8 +89,5 @@
         margin: 0 auto;
         margin-bottom: 10px;
         margin-top: 0px;
-        border-radius: 50px;
-        color:#2a6aff;
-        background-color: #385496;
     }
 }
