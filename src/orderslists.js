@@ -88,11 +88,14 @@ const OrdersLists = ({ newOrder, updatedOrder }) => {
         <div>
             <div className="order-list-container">
                 {state.orders
-                    .filter(order => order.order_status !== "Ready")  // Filtering out orders with the "Ready" status
+                    .filter(order => order.order_status !== "Ready")
                     .map((order, idx) => (
                         <div key={idx} className="order">
-                            <p className="order-id">Order ID: {order.order_id}</p>
+                            <div className="order-id">
+                                <span className="order-id-text">Order ID:</span>
+                                <span className="order-id-value">{order.order_id}</span>
                             <button className="ready-button" onClick={() => handleOrderUpdate(order.order_id)}>Mark as Ready</button>
+                            </div>
                         </div>
                     ))}
             </div>
