@@ -5,6 +5,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #8676E1;
+  background-image: url('../public/orderfylogo.PNG');
+  background-repeat: repeat;
+  background-size: calc(2px + 5vw);
+  background-position: 0 0, 15px 15px;
+  overflow: hidden;
 }
 
 code {

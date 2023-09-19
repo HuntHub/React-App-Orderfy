@@ -4,11 +4,12 @@ import OrdersLists from './orderslists';
 import Navigation from './navigation';  // Adjust the path as needed
 import './navigation.css';
 import { withAuthenticator } from '@aws-amplify/ui-react';
+import './auth-styles.css';
 
 function App() {
 
     console.log("App component mounted at", new Date().toISOString());
-    
+
     const [newOrder, setNewOrder] = useState(null);  // State for new orders
     const [updatedOrder, setUpdatedOrder] = useState(null);  // State for updated orders
 

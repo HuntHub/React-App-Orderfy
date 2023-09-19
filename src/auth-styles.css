@@ -1,0 +1,119 @@
+/* General container styles */
+[data-amplify-authenticator] {
+    font-family: 'Arial', sans-serif;
+    background-color: #6e67be;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;               /* Take up full width of its container */
+    max-width: 400px;          /* Set a maximum width for the authenticator */
+    margin: 0 auto;            /* Auto margin to center it horizontally */
+    height: 100%;             /* Ensure the body and html take up the full viewport height */
+    display: flex;            /* Use Flexbox for centering */
+    align-items: center;      /* Center content vertically */
+    justify-content: center;  /* Center content horizontally */
+    margin-top: 100px;
+}
+
+
+/* Tablist styling */
+[data-amplify-authenticator] .amplify-tabs {
+    background-color: #312E50;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+[data-amplify-authenticator] .amplify-tabs-item {
+    background-color: #eaeaea;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    display: none;
+}
+
+[data-amplify-authenticator] .amplify-tabs-item[data-state="active"] {
+    background-color: #0077cc;
+    color: #ffffff;
+    display: none;
+}
+
+[data-amplify-authenticator] .amplify-tabs-item:hover {
+    background-color: #d4d4d4;
+}
+
+/* Form styling */
+[data-amplify-authenticator] form[data-amplify-form] {
+    background-color: #958bff;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+}
+
+[data-amplify-authenticator] .amplify-label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    margin-top: 10px;
+}
+
+[data-amplify-authenticator] .amplify-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+[data-amplify-authenticator] .amplify-input:focus {
+    border-color: #0077cc;
+    outline: none;
+}
+
+[data-amplify-authenticator] .amplify-button {
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+[data-amplify-authenticator] .amplify-button--primary {
+    background-color: #0077cc;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+}
+
+[data-amplify-authenticator] .amplify-button--primary:hover {
+    background-color: #005fa3;
+}
+
+[data-amplify-authenticator] .amplify-button--link {
+    background: none;
+    border: none;
+    color: #0077cc;
+}
+
+[data-amplify-authenticator] .amplify-button--link:hover {
+    text-decoration: underline;
+}
+
+[data-amplify-authenticator] .amplify-button.amplify-field-group__control.amplify-field__show-password {
+    display: none;
+}
+
+[data-amplify-authenticator] .amplify-button.amplify-field-group__control.amplify-button--primary.amplify-button--fullwidth {
+    margin-top: 15px;
+}
+
+/* Icon styling */
+[data-amplify-authenticator] .amplify-icon {
+    fill: #0077cc;
+}
+
+/* Footer styling */
+[data-amplify-footer] {
+    margin-top: 20px;
+}
