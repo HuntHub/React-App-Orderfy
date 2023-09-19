@@ -6,6 +6,9 @@ import './navigation.css';
 import { withAuthenticator } from '@aws-amplify/ui-react';
 
 function App() {
+
+    console.log("App component mounted at", new Date().toISOString());
+    
     const [newOrder, setNewOrder] = useState(null);  // State for new orders
     const [updatedOrder, setUpdatedOrder] = useState(null);  // State for updated orders
 
