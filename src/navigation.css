@@ -8,12 +8,12 @@
   padding-right: 20px;
   border-radius: 10px 10px 10px 10px;
   margin-top: 20px;
-  background-color: rgb(173, 200, 255);
+  background-color: #8676E1;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .app-name {
-  color: #316fff;
+  color: #fcffd7;
   font-size: 40px;
   font-weight: 600;
 }
@@ -23,7 +23,7 @@
   left: 50%;
   transform: translateX(-50%);
   font-size: 45px;
-  color: #3b5aa2;
+  color: #fcffd7;
   font-weight: 600;
 }
 
@@ -43,12 +43,12 @@
   padding-right: 20px;
   border-radius: 10px 10px 10px 10px;
   margin-top: 20px;
-  background-color: rgb(173, 200, 255);
+  background-color: #8676E1;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }  
 
   .app-name {
-  color: #316fff;
+  color: #fcffd7;
   font-size: 25px;
   font-weight: 600;
   }
@@ -58,7 +58,7 @@
   left: 50%;
   transform: translateX(-50%);
   font-size: 20px;
-  color: #3b5aa2;
+  color: #fcffd7;
   font-weight: 600;
  }
 

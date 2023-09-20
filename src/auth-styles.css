@@ -117,3 +117,11 @@
 [data-amplify-footer] {
     margin-top: 20px;
 }
+
+@media (max-width: 768px) {  /* You can adjust this breakpoint as needed */
+    [data-amplify-authenticator] {
+        max-width: 80%;  /* or whatever width you desire */
+        margin: 0 auto;
+        margin-top: 100px;
+    }
+}
