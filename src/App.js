@@ -38,9 +38,6 @@ function App() {
                     } else if (data.message === "New order" && data.order_id !== newOrder) {
                         setNewOrder(data.order_id);
                         console.log(data.message, data.order_id);
-
-                        // Resetting the newOrder state after a short delay
-                        setTimeout(() => setNewOrder(null), 1000);
                     }
                 });
 
@@ -56,7 +53,7 @@ function App() {
                     setTimeout(() => {
                         console.log('Attempting to reconnect...');
                         connectWebSocket();
-                    }, 1000); // Attempt to reconnect after 1 second
+                    }, 500);
                 });
 
                 socket.addEventListener('error', (error) => {
