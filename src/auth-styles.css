@@ -125,3 +125,7 @@
         margin-top: 100px;
     }
 }
+
+.amplify-loader {
+    display: none !important;
+  }
