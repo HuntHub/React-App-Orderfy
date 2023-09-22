@@ -5,6 +5,7 @@ import Navigation from './navigation';  // Adjust the path as needed
 import './navigation.css';
 import { withAuthenticator } from '@aws-amplify/ui-react';
 import './auth-styles.css';
+import { Helmet } from 'react-helmet';
 
 function App() {
 
@@ -32,9 +33,8 @@ function App() {
                     if (data.message === "Order updated" && data.order_id !== updatedOrder) {
                         setUpdatedOrder(data.order_id);
                         console.log(data.message, data.order_id);
+                        setTimeout(() => setUpdatedOrder(null), 500);
 
-                        // Resetting the updatedOrder state after a short delay
-                        setTimeout(() => setUpdatedOrder(null), 1000);
                     } else if (data.message === "New order" && data.order_id !== newOrder) {
                         setNewOrder(data.order_id);
                         console.log(data.message, data.order_id);
@@ -77,6 +77,9 @@ function App() {
 
     return (
         <div className="App">
+            <Helmet>
+                <title>Orderfy</title>
+            </Helmet>
             <header className="App-header">
                 <Navigation />
                 <div className="app-title">
