@@ -6,6 +6,12 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
+    overflow-y: auto;
+    max-height: 500px;
+}
+
+.order:last-child {
+    margin-bottom: 50px; /* or padding-bottom, adjust value accordingly */
 }
 
 .order {
