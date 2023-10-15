@@ -8,11 +8,9 @@ import './auth-styles.css';
 import { Helmet } from 'react-helmet';
 
 function App() {
-
     console.log("App component mounted at", new Date().toISOString());
 
-    const [newOrder, setNewOrder] = useState(null);  // State for new orders
-    const [updatedOrder, setUpdatedOrder] = useState(null);  // State for updated orders
+    const [messageQueue, setMessageQueue] = useState([]);
 
     useEffect(() => {
         let socket;
@@ -29,15 +27,10 @@ function App() {
                 socket.addEventListener('message', (event) => {
                     const data = JSON.parse(event.data);
                     console.log('WebSocket message received:', data);
-
-                    if (data.message === "Order updated" && data.order_id !== updatedOrder) {
-                        setUpdatedOrder(data.order_id);
-                        console.log(data.message, data.order_id);
-                        setTimeout(() => setUpdatedOrder(null), 500);
-
-                    } else if (data.message === "New order" && data.order_id !== newOrder) {
-                        setNewOrder(data.order_id);
-                        console.log(data.message, data.order_id);
+    
+                    if ((data.message === "Order updated" || data.message === "New order") && !messageQueue.some(msg => msg.order_id === data.order_id)) {
+                        console.log(`Adding order with ID ${data.order_id} to the queue at ${new Date()}`);
+                        setMessageQueue(prevQueue => [...prevQueue, data]);
                     }
                 });
 
@@ -85,7 +78,7 @@ function App() {
                 <div className="app-title">
                     <h1>Order Interface</h1>
                 </div>
-                <OrdersLists newOrder={newOrder} updatedOrder={updatedOrder} />
+                <OrdersLists messageQueue={messageQueue} setMessageQueue={setMessageQueue} />
             </header>
         </div>
     );
