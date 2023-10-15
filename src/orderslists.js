@@ -1,4 +1,4 @@
-iimport React, { useReducer, useEffect } from 'react';
+import React, { useReducer, useEffect } from 'react';
 import { API } from 'aws-amplify';
 import './orderslists.css';
 
